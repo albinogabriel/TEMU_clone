@@ -3,7 +3,7 @@ import { encodeBase32LowerCaseNoPadding, encodeHexLowerCase } from "@oslojs/enco
 import { sha256 } from "@oslojs/crypto/sha2";
 
 import type { User, Session } from "@/generated/prisma";
-import prisma from "@/lib/prisma";
+import { prisma } from "@/lib/prisma";
 import { cookies } from "next/headers";
 import { cache } from "react";
 import { error } from "console";

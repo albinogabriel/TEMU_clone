@@ -1,6 +1,6 @@
 import { getCurrentSession } from "@/actions/auth";
-import { readFileSync } from "fs";
 import { redirect } from "next/navigation";
+import React from "react";
 
 const SignUpPage = async() => {
 
