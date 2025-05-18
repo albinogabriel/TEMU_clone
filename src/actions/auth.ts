@@ -116,12 +116,12 @@ export const hashPassword = async(password: string) => {
     return encodeHexLowerCase(sha256(new TextEncoder().encode(password)));
 };
 
-export const verifyPassword = async(password: String, hash: String) => {
+export const verifyPassword = async(password: string, hash: string) => {
     const passwordHash = await hashPassword(password);
     return passwordHash === hash;
 };
 
-export const registerUser = async(email: String, password: String) => {
+export const registerUser = async(email: string, password: string) => {
     const passwordHash = await hashPassword(password);
     try {
         const user = await prisma.user.create({
@@ -148,7 +148,7 @@ export const registerUser = async(email: String, password: String) => {
     };
 };
 
-export const loginUser = async(email: String, password: String) => {
+export const loginUser = async(email: string, password: string) => {
     const user = await prisma.user.findUnique({
         where: {
             email: email,
